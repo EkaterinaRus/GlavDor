@@ -180,6 +180,7 @@ p {
 }
 
 .file-list {
+  font-size: 0;
   padding: 0;
 }
 
