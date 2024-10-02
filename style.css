@@ -81,7 +81,6 @@ p {
   row-gap: 8px;
 }
 
-
 .field__label {
   font-weight: 400;
   font-size: 19px;
@@ -90,7 +89,7 @@ p {
 }
 
 .asterisk {
-  color: #E20808;
+  color: #e20808;
 }
 
 .field__input {
@@ -139,19 +138,6 @@ p {
 }
 
 .file-uploads__input {
-  padding: 0 10px;
-  line-height: 40px;
-  text-align: left;
-  height: 40px;
-  display: block;
-  float: left;
-  box-sizing: border-box;
-  width: 200px;
-  border-radius: 6px 0px 0 6px;
-  border: 1px solid #ddd;
-}
-
-.file-uploads__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -193,7 +179,34 @@ p {
   margin-left: 13px;
 }
 
-/*---preview-contract---*/
+.file-list {
+  padding: 0;
+}
+
+.file-list__item {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.file-list__name {
+  display: inline-block;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.3;
+  color: #555555;
+}
+
+.file-list__remove {
+  color: #333333;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+}
 
 .preview-contract {
   display: flex;
@@ -210,28 +223,19 @@ p {
 
 .preview-contract__img-container {
   position: relative;
-  width: 100%; 
-  max-width: 370px; 
-  height: auto; 
+  width: 100%;
+  max-width: 370px;
+  height: auto;
   border: 1px solid #d4d4d4;
   border-radius: 15px;
   overflow: hidden;
-/* 
-  position: relative;
-  width: 370px;
-  height: 520px;
-  border: 1px solid #d4d4d4;
-  border-radius: 15px; */
 }
 
 .preview-contract__img-container img {
-  /* border: 1px solid #d4d4d4;
-  border-radius: 15px; */
-
   width: 100%;
-  height: auto; 
-  display: block; 
-  border: none; 
+  height: auto;
+  display: block;
+  border: none;
 }
 
 .preview-contract__button {
@@ -264,21 +268,36 @@ p {
   margin-left: 10px;
 }
 
+
 @media (max-width: 1600px) {
   .preview-contract__button {
     width: 90%;
   }
+
   .preview-contract__title {
     font-size: 23px;
     line-height: 1.3;
-}
+  }
+
+  .file-uploads__btn {
+    padding-inline: 30px;
+  }
 }
 
 @media (max-width: 1200px) {
-
   .preview-contract__title {
     font-size: 20px;
-}
+  }
+
+  .field__input {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .file-uploads__text {
+    font-size: 16px;
+    line-height: 1.3;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -303,24 +322,12 @@ p {
     margin: 0 auto;
   }
 
-  .field__input {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-
-  .file-uploads__text {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-
-  .file-uploads__btn{
+  .file-uploads__btn {
     padding-inline: 25px;
   }
-
 }
 
 @media (max-width: 666.98px) {
-
   .prepayment__button {
     margin-inline: auto;
   }
@@ -333,14 +340,36 @@ p {
     row-gap: 20px;
   }
 
+  .field__label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
   .field__input {
     font-size: 15px;
+    padding: 20px 15px 20px 20px;
+  }
+
+  .prepayment__field--phone,
+  .prepayment__field--email {
+    width: 100%;
   }
 
   .file-uploads__text {
-    text-wrap: nowrap;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 18%);
+
     font-size: 15px;
     line-height: 1.3;
+  }
+
+  .file-uploads {
+    padding: 20px 15px 20px 20px;
   }
 
   .file-uploads__btn {
@@ -350,5 +379,21 @@ p {
 
   .file-uploads__btn svg {
     margin-left: 0;
+  }
+
+  .file-list__name {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 375px) {
+  .prepayment__content-left {
+    padding: 20px 10px;
+  }
+
+  .field__input,
+  .file-uploads {
+    font-size: 15px;
+    padding: 20px 15px 20px 15px;
   }
 }
